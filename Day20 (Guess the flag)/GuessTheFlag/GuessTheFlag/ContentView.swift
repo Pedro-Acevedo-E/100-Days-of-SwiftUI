@@ -27,6 +27,10 @@ struct ContentView: View {
     
     @State private var score = 0
     
+    @State private var animationAmount = [0.0, 0.0, 0.0]
+    @State private var fadeOutAmount = [1.0, 1.0, 1.0]
+    @State private var scaleAmount = [1.0, 1.0, 1.0]
+    
     var body: some View {
         ZStack {
             LinearGradient(colors: [.blue, .black], startPoint: .top, endPoint: .bottom).ignoresSafeArea()
@@ -50,9 +54,21 @@ struct ContentView: View {
                     ForEach(0..<3) { number in
                         Button {
                             flagTapped(number)
+                            withAnimation(.spring(duration: 1, bounce: 0.5)) {
+                                animationAmount[number] += 360
+                                for (index, element) in fadeOutAmount.enumerated() {
+                                    if index != number {
+                                        fadeOutAmount[index] = element / 4
+                                        scaleAmount[index] = element / 2
+                                    }
+                                }
+                            }
                         } label: {
                             FlagImage(country: countries[number])
                         }
+                        .rotation3DEffect(.degrees(animationAmount[number]), axis: (x: 0, y: 1, z: 0))
+                        .opacity(fadeOutAmount[number])
+                        .scaleEffect(scaleAmount[number])
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -77,8 +93,14 @@ struct ContentView: View {
     }
     
     func askQuestion() {
-        countries.shuffle()
-        correctAnswer = Int.random(in: 0...2)
+        withAnimation(.spring(duration: 1, bounce: 0.5)) {
+            countries.shuffle()
+            correctAnswer = Int.random(in: 0...2)
+            for (i, _) in fadeOutAmount.enumerated() {
+                fadeOutAmount[i] = 1.0
+                scaleAmount[i] = 1.0
+            }
+        }
     }
     
     func flagTapped(_ number: Int) {
