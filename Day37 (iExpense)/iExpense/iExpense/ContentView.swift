@@ -13,20 +13,53 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
-                        }
+            VStack {
+                Section ("Personal") {
+                    List {
+                        ForEach(expenses.items) { item in
+                            if (item.type == "Personal") {
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text(item.name)
+                                            .font(.headline)
+                                        Text(item.type)
+                                    }
 
-                        Spacer()
-                        Text(item.amount, format: .currency(code: "USD"))
+                                    Spacer()
+                                    Text(
+                                        item.amount,
+                                        format: .currency(code: Locale.current.currency?.identifier ?? "USD")
+                                    )
+                                    .foregroundStyle(item.amount < 100 ? (item.amount < 10 ? .blue : .green) : .red)
+                                }
+                            }
+                        }
+                        .onDelete(perform: removeItems)
                     }
                 }
-                .onDelete(perform: removeItems)
+                Section ("Business") {
+                    List {
+                        ForEach(expenses.items) { item in
+                            if (item.type != "Personal") {
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text(item.name)
+                                            .font(.headline)
+                                        Text(item.type)
+                                    }
+
+                                    Spacer()
+                                    Text(
+                                        item.amount,
+                                        format: .currency(code: Locale.current.currency?.identifier ?? "USD")
+                                    )
+                                    .foregroundStyle(item.amount < 100 ? (item.amount < 10 ? .blue : .green) : .red)
+                                }
+                            }
+                        }
+                        .onDelete(perform: removeItems)
+                    }
+                }
             }
             .navigationTitle("iExpense")
             .toolbar {
