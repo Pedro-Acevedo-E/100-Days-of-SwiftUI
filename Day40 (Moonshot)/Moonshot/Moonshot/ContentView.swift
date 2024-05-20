@@ -11,9 +11,15 @@ struct ContentView: View {
     let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
     let missions: [Mission] = Bundle.main.decode("missions.json")
     
-    let columns = [
-        GridItem(.adaptive(minimum: 150))
-    ]
+    var columns: [GridItem] {
+        if(showingGrid) {
+            return [GridItem(.adaptive(minimum: 150))]
+        } else {
+            return [GridItem(.adaptive(minimum: .infinity))]
+        }
+    }
+    
+    @State private var showingGrid = true
     
     var body: some View {
         NavigationStack {
@@ -54,7 +60,18 @@ struct ContentView: View {
             }
             .navigationTitle("Moonshot")
             .background(.darkBackground)
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Button(action: {
+                        showingGrid.toggle()
+                    }) {
+                        Text(showingGrid ? "Show List" : "Show Grid")
+                            .bold()
+                    }
+                }
+            }
             .preferredColorScheme(.dark)
+            
         }
     }
 }
