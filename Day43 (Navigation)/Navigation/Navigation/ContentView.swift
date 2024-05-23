@@ -15,7 +15,9 @@ struct ContentView: View {
         //NavigatingUsingDiferentDataTypes()
         //NavigatingUsingDiferentDataTypesProgramatically()
         //ReturnToRootViewProgramatically()
-        RememberingNavigation()
+        //RememberingNavigation()
+        //CustomToolbarPlacement()
+        EditableNavigationTitle()
     }
 }
 
@@ -59,14 +61,14 @@ struct ProgramaticNavigation: View {
     //Navigation destination will send us to the appropiate view
     //The value we use for path must be a data type that conforms to hashable
     @State private var path = [Int]()
-
+    
     var body: some View {
         NavigationStack(path: $path) {
             VStack {
                 Button("Show 32") {
                     path = [32]
                 }
-
+                
                 Button("Show 64") {
                     path.append(64)
                 }
@@ -90,7 +92,7 @@ struct NavigatingUsingDiferentDataTypes: View {
                 ForEach(0..<5) { i in
                     NavigationLink("Select Number: \(i)", value: i)
                 }
-
+                
                 ForEach(0..<5) { i in
                     NavigationLink("Select String: \(i)", value: String(i))
                 }
@@ -119,7 +121,7 @@ struct NavigatingUsingDiferentDataTypesProgramatically: View {
                 Button("Push 556") {
                     path.append(556)
                 }
-
+                
                 Button("Push Hello") {
                     path.append("Hello")
                 }
@@ -136,7 +138,7 @@ struct NavigatingUsingDiferentDataTypesProgramatically: View {
 
 struct ReturnToRootViewProgramatically: View {
     @State private var path = [Int]()
-
+    
     var body: some View {
         NavigationStack(path: $path) {
             DetailView2(number: 0, path: $path)
@@ -151,7 +153,7 @@ struct RememberingNavigation: View {
     //In this final demo we demonstrate how to save the path in a json file
     //So that the app remembers were it was left after closing
     @State private var pathStore = PathStore()
-
+    
     var body: some View {
         NavigationStack(path: $pathStore.path) {
             DetailView3(number: 0)
@@ -162,16 +164,48 @@ struct RememberingNavigation: View {
     }
 }
 
+struct CustomToolbarPlacement: View {
+    var body: some View {
+        NavigationStack {
+            Text("Hello, world!")
+                .toolbar {
+                    ToolbarItemGroup(placement: .topBarLeading) {
+                        Button("Tap Me") {
+                            // button action here
+                        }
+                        
+                        Button("Tap Me 2") {
+                            // button action here
+                        }
+                    }
+                }
+        }
+    }
+}
+
+struct EditableNavigationTitle: View {
+    @State private var title = "SwiftUI"
+
+        var body: some View {
+            NavigationStack {
+                Text("Hello, world!")
+                    .navigationTitle($title)
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+        }
+}
+
+
 
 
 
 struct DetailView: View {
     var number: Int
-
+    
     var body: some View {
         Text("Detail View \(number)")
     }
-
+    
     init(number: Int) {
         self.number = number
         print("Creating detail view \(number)")
@@ -181,7 +215,7 @@ struct DetailView: View {
 struct DetailView2: View {
     var number: Int
     @Binding var path: [Int]
-
+    
     var body: some View {
         VStack {
             NavigationLink("Go to Random Number", value: Int.random(in: 1...1000))
@@ -197,9 +231,9 @@ struct DetailView2: View {
          If using a NavigationPath you can use...
          
          .toolbar {
-             Button("Home") {
-                 path = NavigationPath()
-             }
+         Button("Home") {
+         path = NavigationPath()
+         }
          }
          */
     }
@@ -207,7 +241,7 @@ struct DetailView2: View {
 
 struct DetailView3: View {
     var number: Int
-
+    
     var body: some View {
         NavigationLink("Go to Random Number", value: Int.random(in: 1...1000))
             .navigationTitle("Number: \(number)")
@@ -223,9 +257,9 @@ class PathStore {
             save()
         }
     }
-
+    
     private let savePath = URL.documentsDirectory.appending(path: "SavedPath")
-
+    
     init() {
         if let data = try? Data(contentsOf: savePath) {
             if let decoded = try? JSONDecoder().decode(NavigationPath.CodableRepresentation.self, from: data) {
@@ -233,14 +267,14 @@ class PathStore {
                 return
             }
         }
-
+        
         // Still here? Start with an empty path.
         path = NavigationPath()
     }
-
+    
     func save() {
         guard let representation = path.codable else { return }
-
+        
         do {
             let data = try JSONEncoder().encode(representation)
             try data.write(to: savePath)
