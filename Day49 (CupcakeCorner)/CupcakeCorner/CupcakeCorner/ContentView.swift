@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  CupckeCorner
+//  CupcakeCorner
 //
 //  Created by Pedro Acevedo on 29/05/24.
 //
