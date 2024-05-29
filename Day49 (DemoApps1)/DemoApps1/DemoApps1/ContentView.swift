@@ -16,6 +16,9 @@ struct ContentView: View {
             NavigationLink("Form Validation") {
                 FormValidation()
             }
+            NavigationLink("Haptic Feedback") {
+                HapticFeedBack()
+            }
         }
         
     }

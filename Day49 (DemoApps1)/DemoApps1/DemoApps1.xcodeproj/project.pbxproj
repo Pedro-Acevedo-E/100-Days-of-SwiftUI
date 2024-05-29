@@ -13,6 +13,7 @@
 		D53793BB2C07C22D003803DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D53793BA2C07C22D003803DD /* Preview Assets.xcassets */; };
 		D53793C22C07C27A003803DD /* SampleMusicAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53793C12C07C27A003803DD /* SampleMusicAPI.swift */; };
 		D53793C42C07C781003803DD /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53793C32C07C781003803DD /* FormValidation.swift */; };
+		D53793C62C07CF26003803DD /* HapticFeedBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53793C52C07CF26003803DD /* HapticFeedBack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		D53793BA2C07C22D003803DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D53793C12C07C27A003803DD /* SampleMusicAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMusicAPI.swift; sourceTree = "<group>"; };
 		D53793C32C07C781003803DD /* FormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
+		D53793C52C07CF26003803DD /* HapticFeedBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedBack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				D53793B92C07C22D003803DD /* Preview Content */,
 				D53793C12C07C27A003803DD /* SampleMusicAPI.swift */,
 				D53793C32C07C781003803DD /* FormValidation.swift */,
+				D53793C52C07CF26003803DD /* HapticFeedBack.swift */,
 			);
 			path = DemoApps1;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			files = (
 				D53793B62C07C22C003803DD /* ContentView.swift in Sources */,
 				D53793C22C07C27A003803DD /* SampleMusicAPI.swift in Sources */,
+				D53793C62C07CF26003803DD /* HapticFeedBack.swift in Sources */,
 				D53793C42C07C781003803DD /* FormValidation.swift in Sources */,
 				D53793B42C07C22C003803DD /* DemoApps1App.swift in Sources */,
 			);
