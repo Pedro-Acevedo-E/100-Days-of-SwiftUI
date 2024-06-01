@@ -10,7 +10,7 @@ import SwiftUI
 @Observable
 class Order: Codable {
     static let types = ["Vanilla", "Strawberry", "Chocolate", "Rainbow"]
-
+    
     var type = 0
     var quantity = 3
 
