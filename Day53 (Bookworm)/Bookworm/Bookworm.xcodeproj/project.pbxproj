@@ -11,6 +11,11 @@
 		D559806E2C0E827900A9A8D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559806D2C0E827900A9A8D3 /* ContentView.swift */; };
 		D55980702C0E827B00A9A8D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D559806F2C0E827B00A9A8D3 /* Assets.xcassets */; };
 		D55980732C0E827B00A9A8D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55980722C0E827B00A9A8D3 /* Preview Assets.xcassets */; };
+		D5F3019D2C0FBB3900C377B0 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F3019C2C0FBB3900C377B0 /* Book.swift */; };
+		D5F301A02C0FBBDA00C377B0 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F3019F2C0FBBDA00C377B0 /* AddBookView.swift */; };
+		D5F301A22C0FBDDD00C377B0 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F301A12C0FBDDD00C377B0 /* RatingView.swift */; };
+		D5F301A42C0FBF5D00C377B0 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F301A32C0FBF5D00C377B0 /* EmojiRatingView.swift */; };
+		D5F301A62C0FC2F100C377B0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F301A52C0FC2F100C377B0 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		D559806D2C0E827900A9A8D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D559806F2C0E827B00A9A8D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D55980722C0E827B00A9A8D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D5F3019C2C0FBB3900C377B0 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		D5F3019F2C0FBBDA00C377B0 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		D5F301A12C0FBDDD00C377B0 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		D5F301A32C0FBF5D00C377B0 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
+		D5F301A52C0FC2F100C377B0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,8 @@
 		D559806A2C0E827900A9A8D3 /* Bookworm */ = {
 			isa = PBXGroup;
 			children = (
+				D5F3019E2C0FBBCC00C377B0 /* Views */,
+				D5F3019B2C0FBB2A00C377B0 /* Models */,
 				D559806B2C0E827900A9A8D3 /* BookwormApp.swift */,
 				D559806D2C0E827900A9A8D3 /* ContentView.swift */,
 				D559806F2C0E827B00A9A8D3 /* Assets.xcassets */,
@@ -65,6 +77,25 @@
 				D55980722C0E827B00A9A8D3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D5F3019B2C0FBB2A00C377B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D5F3019C2C0FBB3900C377B0 /* Book.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D5F3019E2C0FBBCC00C377B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5F3019F2C0FBBDA00C377B0 /* AddBookView.swift */,
+				D5F301A12C0FBDDD00C377B0 /* RatingView.swift */,
+				D5F301A32C0FBF5D00C377B0 /* EmojiRatingView.swift */,
+				D5F301A52C0FC2F100C377B0 /* DetailView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +170,11 @@
 			files = (
 				D559806E2C0E827900A9A8D3 /* ContentView.swift in Sources */,
 				D559806C2C0E827900A9A8D3 /* BookwormApp.swift in Sources */,
+				D5F3019D2C0FBB3900C377B0 /* Book.swift in Sources */,
+				D5F301A62C0FC2F100C377B0 /* DetailView.swift in Sources */,
+				D5F301A22C0FBDDD00C377B0 /* RatingView.swift in Sources */,
+				D5F301A42C0FBF5D00C377B0 /* EmojiRatingView.swift in Sources */,
+				D5F301A02C0FBBDA00C377B0 /* AddBookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
