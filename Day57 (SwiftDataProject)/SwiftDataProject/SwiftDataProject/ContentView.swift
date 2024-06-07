@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingUpcomingOnly = false
+    
     var body: some View {
         //UserEditingApp()
-        FilterUsers()
+        //FilterUsers()
+        //UsersView()
+        UserJobsView()
     }
 }
 

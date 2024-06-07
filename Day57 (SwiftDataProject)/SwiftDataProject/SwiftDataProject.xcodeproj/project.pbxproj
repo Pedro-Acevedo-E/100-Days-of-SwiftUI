@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D539DD412C13AE3000537234 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539DD402C13AE3000537234 /* UsersView.swift */; };
+		D539DD432C13B25400537234 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539DD422C13B25400537234 /* Job.swift */; };
+		D539DD452C13B2DB00537234 /* UserJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D539DD442C13B2DB00537234 /* UserJobsView.swift */; };
 		D58830C62C11041D00FA9661 /* SwiftDataProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58830C52C11041D00FA9661 /* SwiftDataProjectApp.swift */; };
 		D58830C82C11041D00FA9661 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58830C72C11041D00FA9661 /* ContentView.swift */; };
 		D58830CA2C11041F00FA9661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58830C92C11041F00FA9661 /* Assets.xcassets */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D539DD402C13AE3000537234 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		D539DD422C13B25400537234 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		D539DD442C13B2DB00537234 /* UserJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJobsView.swift; sourceTree = "<group>"; };
 		D58830C22C11041D00FA9661 /* SwiftDataProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDataProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58830C52C11041D00FA9661 /* SwiftDataProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataProjectApp.swift; sourceTree = "<group>"; };
 		D58830C72C11041D00FA9661 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				D58830D42C1105E400FA9661 /* User.swift */,
+				D539DD422C13B25400537234 /* Job.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,6 +98,8 @@
 				D58830D72C11064F00FA9661 /* EditUserView.swift */,
 				D58830D92C1106C400FA9661 /* UserEditingApp.swift */,
 				D58830DB2C1109B300FA9661 /* FlterUsers.swift */,
+				D539DD402C13AE3000537234 /* UsersView.swift */,
+				D539DD442C13B2DB00537234 /* UserJobsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,7 +179,10 @@
 				D58830DC2C1109B300FA9661 /* FlterUsers.swift in Sources */,
 				D58830C62C11041D00FA9661 /* SwiftDataProjectApp.swift in Sources */,
 				D58830D52C1105E400FA9661 /* User.swift in Sources */,
+				D539DD412C13AE3000537234 /* UsersView.swift in Sources */,
 				D58830DA2C1106C400FA9661 /* UserEditingApp.swift in Sources */,
+				D539DD452C13B2DB00537234 /* UserJobsView.swift in Sources */,
+				D539DD432C13B25400537234 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
